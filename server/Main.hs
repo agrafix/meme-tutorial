@@ -22,62 +22,17 @@ main =
              putStrLn "Usage: ./"
 
 app :: SpockT IO ()
-app =
-    do get "/" homeSite
-       post "/meme" downloadMeme
-
+app = pure () -- define your routing here
 
 homeView :: Html ()
 homeView =
     doctypehtml_ $
     do head_ $
            title_ "MemeGen"
-       body_ $
-           do h1_ "Welcome to MemeGen"
-              form_
-                  [ action_ "/meme"
-                  , method_ "post"
-                  , enctype_ "multipart/form-data"
-                  ] $
-                  do input_
-                         [ type_ "text"
-                         , name_ "firstline"
-                         , placeholder_ "First Line"
-                         ]
-                     br_ []
-                     input_
-                         [ type_ "text"
-                         , name_ "secondline"
-                         , placeholder_ "Second Line"
-                         ]
-                     br_ []
-                     input_
-                         [ type_ "file"
-                         , name_ "file"
-                         ]
-                     br_ []
-                     input_
-                         [ type_ "submit"
-                         , value_ "Create the meme!"
-                         ]
+       body_ $ h1_ "Welcome to MemeGen"
 
 homeSite :: ActionT IO ()
-homeSite =
-    lucid homeView
-
+homeSite = undefined
 
 downloadMeme :: ActionT IO ()
-downloadMeme =
-    do fl <- param' "firstline"
-       sl <- param' "secondline"
-       upFile <-
-           HM.lookup "file" <$> files
-       case upFile of
-         Nothing ->
-             do setStatus status500
-                text "Missing uploaded file!"
-         Just uploadedFile ->
-             do bs <- liftIO (BS.readFile $ uf_tempLocation uploadedFile)
-                meme <- liftIO (createMeme bs fl sl)
-                setHeader "Content-Type" (uf_contentType uploadedFile)
-                bytes meme
+downloadMeme = undefined
