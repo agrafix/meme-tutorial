@@ -1,0 +1,49 @@
+name:                meme-tutorial
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/githubuser/meme-tutorial#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Stefan Wehr, Alexander Thiemann
+maintainer:          thiemann@cp-med.com
+copyright:           2017 Stefan Wehr, Alexander Thiemann
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     MemeGen
+  build-depends:       base >= 4.7 && < 5
+                     , aeson
+                     , bytestring
+                     , containers
+                     , directory
+                     , filepath
+                     , gd
+                     , mtl
+                     , text
+  default-language:    Haskell2010
+
+executable meme-tutorial-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , meme-tutorial
+  default-language:    Haskell2010
+
+test-suite meme-tutorial-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , meme-tutorial
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/agrafix/meme-tutorial
