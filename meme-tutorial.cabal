@@ -26,22 +26,29 @@ library
                      , mtl
                      , text
   default-language:    Haskell2010
+  ghc-options:       -Wall -Werror
 
 executable meme-tutorial-exe
   hs-source-dirs:      app
   main-is:             Main.hs
-  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  ghc-options:         -Wall -Werror -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
                      , meme-tutorial
   default-language:    Haskell2010
 
-test-suite meme-tutorial-test
-  type:                exitcode-stdio-1.0
-  hs-source-dirs:      test
-  main-is:             Spec.hs
+executable meme-tutorial-server
+  hs-source-dirs:      server
+  main-is:             Main.hs
+  ghc-options:         -Wall -Werror -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
+                     , Spock-core
+                     , Spock-lucid
+                     , bytestring
+                     , http-types
+                     , lucid
+                     , mtl
+                     , unordered-containers
                      , meme-tutorial
-  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
 
 source-repository head
