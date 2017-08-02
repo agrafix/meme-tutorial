@@ -1,16 +1,16 @@
 {-# LANGUAGE OverloadedStrings #-}
 module Main where
 
-import MemeGen (createMeme)
+-- import MemeGen (createMeme)
 
-import Control.Monad.Trans
+-- import Control.Monad.Trans
 import Lucid
-import Network.HTTP.Types.Status
+-- import Network.HTTP.Types.Status
 import System.Environment
 import Web.Spock.Core
-import Web.Spock.Lucid
-import qualified Data.ByteString as BS
-import qualified Data.HashMap.Strict as HM
+-- import Web.Spock.Lucid
+-- import qualified Data.ByteString as BS
+-- import qualified Data.HashMap.Strict as HM
 
 main :: IO ()
 main =

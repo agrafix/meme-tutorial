@@ -1,10 +1,10 @@
 module Main where
 
 import Control.Monad
-import MemeGen
+-- import MemeGen
 import System.Environment
 import System.Exit
-import qualified Data.ByteString as BS
+-- import qualified Data.ByteString as BS
 
 main :: IO ()
 main =
