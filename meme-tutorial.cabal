@@ -1,7 +1,5 @@
 name:                meme-tutorial
 version:             0.1.0.0
--- synopsis:
--- description:
 homepage:            https://github.com/githubuser/meme-tutorial#readme
 license:             BSD3
 license-file:        LICENSE
@@ -16,6 +14,7 @@ cabal-version:       >=1.10
 library
   hs-source-dirs:      src
   exposed-modules:     MemeGen
+  ghc-options:         -Wall -Werror
   build-depends:       base >= 4.7 && < 5
                      , aeson
                      , bytestring
@@ -28,12 +27,13 @@ library
   default-language:    Haskell2010
   ghc-options:       -Wall -Werror
 
-executable meme-tutorial-exe
+executable memegen
   hs-source-dirs:      app
   main-is:             Main.hs
   ghc-options:         -Wall -Werror -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
                      , meme-tutorial
+                     , bytestring
   default-language:    Haskell2010
 
 executable meme-tutorial-server
