@@ -16,6 +16,12 @@ stack setup
 stack build --fast
 ```
 
+## Running on the Commandline
+
+```bash
+stack exec -- memegen in.jpg Hello World out.jpg
+```
+
 ## Running the Web Server
 
 ```bash
