@@ -16,13 +16,17 @@ stack setup
 stack build --fast
 ```
 
-## Running on the Commandline
+## Running
+
+Note that this will not work for the stubs provided in the `master` branch as there's no implementation.
+
+### Commandline
 
 ```bash
 stack exec -- memegen in.jpg Hello World out.jpg
 ```
 
-## Running the Web Server
+### Web Server
 
 ```bash
 stack exec -- meme-tutorial-server 8080
