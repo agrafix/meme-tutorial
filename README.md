@@ -13,7 +13,7 @@
 git clone https://github.com/agrafix/meme-tutorial.git
 cd meme-tutorial
 stack setup
-stack build --fast --pedantic
+stack build --fast
 ```
 
 ## Running the Web Server
